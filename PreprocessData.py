@@ -147,3 +147,19 @@ def frequency_count(df, indices, target):
         return freq + [pvalue]
     except IndexError:
         return []
+
+# Count occurrences of outliers
+outlier_counter = Counter(outlier_indices)
+
+# Create a DataFrame to store frequency counts and p-values
+data=pd.DataFrame(
+    [
+        [i] + frequency_count(
+            df=df_clean,
+            indices=keys_with_value(outlier_counter, i),
+            target=target_name,
+        )
+        for i in range(1, len(feature_names))
+    ]
+).rename(columns={0: 'Count', 1: 'Non-Fraud', 2: 'Fraud', 3: 'p-value'})
+
