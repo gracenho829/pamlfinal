@@ -6,10 +6,14 @@ st.title('Credit Card Fraud Detection')
 st.write("Our app will help you detect any fraudulent transactions!")
 st.divider()
 
-with st.form("fraudulent_transaction_form"):
-   st.write("Put in information of your fraudulent transaction here. ")
-   number = st.number_input("Insert a number", value=None, step=1, placeholder="Field 1")
-   # Every form must have a submit button.
-   submitted = st.form_submit_button("Check for Fraudulent Transaction")
-   if submitted:
-       st.write("Field 1", number)
+container = st.container(border=True)
+col1, col2, col3 = st.columns(3)
+with container:
+   st.write("Click one of these buttons to check for fraudulent transactions")
+   with col1:
+      st.button("Check 'Card 1' for Fraudulent Transactions", key="Card1", on_click=None)
+   with col2:
+      st.button("Check 'Card 2' for Fraudulent Transactions", key="Card2", on_click=None)
+   with col3:
+      st.button("Check 'Card 3' for Fraudulent Transactions", key="Card3", on_click=None)
+
