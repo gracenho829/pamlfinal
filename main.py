@@ -1,7 +1,6 @@
 import pickle
 import streamlit as st
 import pandas as pd
-import sklearn
 from sklearn.model_selection import train_test_split
 def preprocess_data():
    df = pd.read_csv('creditcard_2023.csv')
@@ -93,5 +92,5 @@ with container:
          fraud = str(card2[0])
          normal = str(card2[1])
 
-  st.write("You have " + fraud + " fraudulent transactions and " + normal + " normal transactions")
+st.write("You have " + fraud + " fraudulent transactions and " + normal + " normal transactions")
 
