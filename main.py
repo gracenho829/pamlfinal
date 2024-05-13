@@ -30,7 +30,6 @@ def preprocess_data():
    df_clean.drop_duplicates(subset=feature_names, inplace=True)
    X_preprocessed = df_clean.drop(columns=["Class"])
    y_preprocessed = df_clean["Class"]
-   print("Preprocessed")
    return X_preprocessed,y_preprocessed
 
 X,y = preprocess_data()
@@ -40,13 +39,11 @@ st.write("Our app will help you detect any fraudulent transactions!")
 st.divider()
 
 container = st.container(border=True)
-col1, col2= st.columns(2)
+col1 = st.columns(1)
 with container:
    st.write("Click one of these buttons to check for fraudulent transactions")
    with col1:
       st.button("Check 'Card 1' for Fraudulent Transactions", key="Card1", on_click=None)
-   with col2:
-      st.button("Check 'Card 2' for Fraudulent Transactions", key="Card2", on_click=None)
 
 
 
