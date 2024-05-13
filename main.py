@@ -52,8 +52,6 @@ decision_tree_pred = decision_tree(X, y)
 gradient_boosting_pred = gradient_boosting(X, y)
 random_forest_pred = random_forest(X,y)
 
-print(" ddhdh ")
-
 def run_models(card_number):
    card_decision_tree = decision_tree_pred[100*card_number: 100*(card_number+1)]
    card_gradient_tree = gradient_boosting_pred[100*card_number: 100*(card_number+1)]
