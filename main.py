@@ -40,7 +40,7 @@ def gradient_boosting(X,y):
 
 def random_forest(X,y):
    X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=100000, test_size=100000, random_state=42)
-   with open("trained_gradientBoosting.pkl", "rb") as f:
+   with open("random_forest.pkl", "rb") as f:
       clf_loaded = pickle.load(f)
 
    # Make predictions using the loaded classifier (optional)
